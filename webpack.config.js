@@ -1,4 +1,5 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = (env) => {
@@ -14,6 +15,19 @@ module.exports = (env) => {
                     test: /\.tsx?$/,
                     use: 'ts-loader',
                     exclude: /node_modules/
+                },
+                {
+                    test: /\.css$/,
+                    loader: ExtractTextPlugin.extract({
+                        use: [{
+                            loader: 'css-loader',
+                            options: {
+                                context: "src",
+                                modules: true,
+                                localIdentName: '[local]_[hash:base64:5]',
+                            }
+                        }]
+                    })
                 }
             ]
         },
@@ -27,7 +41,9 @@ module.exports = (env) => {
             path: path.resolve('./out/public')
         },
 
-        plugins: []
+        plugins: [
+            new ExtractTextPlugin('[name].css')
+        ]
     }
 
     if (env && env.bundleAnalyzer) {

@@ -1,0 +1,2 @@
+[![Build Status](https://travis-ci.org/alpinebreeze/node-ts-express-react-starter-kit.svg?branch=master)](https://travis-ci.org/alpinebreeze/node-ts-express-react-starter-kit)
+# node-ts-express-react-starter-kit

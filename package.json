@@ -1,0 +1,70 @@
+{
+  "name": "node-ts-express-react-starter-kit",
+  "version": "1.0.0",
+  "description": "A boilerplate project to help you get started with node.js and typescript",
+  "main": "out/server/index.js",
+  "scripts": {
+    "clean": "rimraf out coverage",
+    "lint": "tslint src/**/*.ts",
+    "build:server": "tsc -p .",
+    "build:server:copy": "cpx src/**/*.hbs out",
+    "build:client": "webpack",
+    "build": "run-p build:server build:server:copy build:client",
+    "pretest": "npm run build",
+    "test": "npm run lint && jest --coverage",
+    "start": "node out/server/index.js",
+    "watch:build:server": "npm run build:server -- --watch",
+    "watch:build:server:copy": "npm run build:server:copy -- --watch",
+    "watch:build:client": "npm run build:client -- --watch",
+    "watch:start": "nodemon --watch out out/server/index.js",
+    "prewatch": "mkdirp out",
+    "watch": "run-p watch:**",
+    "build:prod": "run-p build:server build:server:copy \"build:client -- -p\"",
+    "build:analyze": "run-p build:server build:server:copy \"build:client -- -p --env.bundleAnalyzer\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alpinebreeze/node-ts-express-react-starter-kit.git"
+  },
+  "author": "Richard Adams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alpinebreeze/node-ts-express-react-starter-kit/issues"
+  },
+  "homepage": "https://github.com/alpinebreeze/node-ts-express-react-starter-kit#readme",
+  "devDependencies": {
+    "@types/compression": "0.0.34",
+    "@types/express": "4.0.37",
+    "@types/helmet": "0.0.36",
+    "@types/jest": "20.0.8",
+    "@types/minimist": "1.2.0",
+    "@types/node": "6.0.88",
+    "@types/react": "15.6.2",
+    "@types/react-dom": "15.5.4",
+    "@types/react-redux": "5.0.5",
+    "@types/redux": "3.6.0",
+    "cpx": "1.5.0",
+    "jest": "20.0.4",
+    "mkdirp": "0.5.1",
+    "nodemon": "1.11.0",
+    "npm-run-all": "4.1.1",
+    "rimraf": "2.6.1",
+    "ts-loader": "2.3.4",
+    "tslint": "5.7.0",
+    "typescript": "2.4.2",
+    "webpack": "3.5.5",
+    "webpack-bundle-analyzer": "2.9.0"
+  },
+  "dependencies": {
+    "compression": "1.7.0",
+    "express": "4.15.4",
+    "hbs": "4.0.1",
+    "helmet": "3.8.1",
+    "minimist": "1.2.0",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "react-redux": "5.0.6",
+    "redux": "3.7.2",
+    "redux-devtools-extension": "2.13.2"
+  }
+}

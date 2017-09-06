@@ -1,3 +1,4 @@
+// mock server
 const mockServer = { start: jest.fn() };
 
 jest.mock("../server", () => ({ default: mockServer }));

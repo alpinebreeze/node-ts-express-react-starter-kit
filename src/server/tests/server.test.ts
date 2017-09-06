@@ -1,3 +1,4 @@
+// mock express
 const mockListen = jest.fn((port, callback) => {
     callback();
 });
@@ -8,6 +9,7 @@ jest.mock("express", () => jest.fn(() => ({
     use: jest.fn(),
 })));
 
+// mock router
 jest.mock("../router", () => ({ default: jest.fn() }));
 
 import server from "../server";

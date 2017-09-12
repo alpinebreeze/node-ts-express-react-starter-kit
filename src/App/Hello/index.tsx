@@ -7,9 +7,10 @@ interface StateProps {
     name?: string;
 }
 
-const Hello = (props: StateProps) => <h1>Hello, <span className={styles.name}>{props.name || "World"}</span>!</h1>;
+export const Hello = (props: StateProps) =>
+    <h1>Hello, <span className={styles.name}>{props.name || "World"}</span>!</h1>;
 
-function mapStateToProps(state: State) {
+export function mapStateToProps(state: State) {
     return { name: state.hello.name };
 }
 

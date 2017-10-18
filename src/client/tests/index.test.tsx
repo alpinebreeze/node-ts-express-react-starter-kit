@@ -1,9 +1,9 @@
 import * as React from "react";
 
-const mockRender = jest.fn();
+const mockHydrate = jest.fn();
 
 jest.mock("react-dom", () => ({
-    render: mockRender,
+    hydrate: mockHydrate,
 }));
 
 const mockApp = () => <div></div>;
@@ -32,5 +32,5 @@ it("should call configureStore with initial state", () => {
 
 it("should call ReactDOM.render with App", () => {
 
-    expect(mockRender.mock.calls[0][0]).toEqual(<App store={mockStore as any} />);
+    expect(mockHydrate.mock.calls[0][0]).toEqual(<App store={mockStore as any} />);
 });

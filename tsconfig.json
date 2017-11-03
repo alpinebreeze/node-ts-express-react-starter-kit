@@ -6,7 +6,7 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "noUnusedLocals": true,
-        "strictNullChecks": true,
+        "strict": true,
         "skipLibCheck": true,
         "jsx": "react"
     }

@@ -81,6 +81,6 @@
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
     },
-    "setupTestFrameworkScriptFile": "<rootDir>/out/setupTests.js"
+    "setupFiles": ["<rootDir>/out/shim.js", "<rootDir>/out/setupTests.js"]
   }
 }

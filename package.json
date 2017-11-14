@@ -19,8 +19,8 @@
     "watch:start": "nodemon --delay 2 --watch out out/server/index.js",
     "prewatch": "mkdirp out",
     "watch": "run-p watch:**",
-    "build:prod": "run-p build:server build:server:copy \"build:client -- -p\"",
-    "build:analyze": "run-p build:server build:server:copy \"build:client -- -p --env.bundleAnalyzer\""
+    "build:prod": "run-p build:server build:server:copy \"build:client -p\"",
+    "build:analyze": "run-p build:server build:server:copy \"build:client -p --env.bundleAnalyzer\""
   },
   "repository": {
     "type": "git",

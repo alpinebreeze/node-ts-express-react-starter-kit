@@ -14,4 +14,4 @@ export function mapStateToProps(state: State) {
     return { name: state.hello.name };
 }
 
-export default connect<StateProps, {}, {}>(mapStateToProps)(Hello);
+export default connect<StateProps, {}, {}, State>(mapStateToProps)(Hello);

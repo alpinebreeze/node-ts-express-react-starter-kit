@@ -33,7 +33,6 @@
   },
   "homepage": "https://github.com/alpinebreeze/node-ts-express-react-starter-kit#readme",
   "devDependencies": {
-    "@types/compression": "0.0.35",
     "@types/css-modules-require-hook": "4.0.1",
     "@types/enzyme": "3.1.6",
     "@types/enzyme-adapter-react-16": "1.0.1",
@@ -65,7 +64,6 @@
     "webpack-bundle-analyzer": "2.9.1"
   },
   "dependencies": {
-    "compression": "1.7.1",
     "css-modules-require-hook": "4.2.2",
     "express": "4.16.2",
     "hbs": "4.0.1",

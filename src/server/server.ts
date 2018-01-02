@@ -1,4 +1,3 @@
-import * as compression from "compression";
 import * as express from "express";
 import * as helmet from "helmet";
 import * as parseArgs from "minimist";
@@ -25,7 +24,6 @@ export default {
         app.set("views", path.resolve(__dirname, "views"));
 
         app.use(helmet());
-        app.use(compression());
         app.use(router());
 
         app.listen(settings.port, () => {

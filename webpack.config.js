@@ -7,7 +7,7 @@ module.exports = (env) => {
     const config = {
         entry: './src/client/index.tsx',
 
-        devtool: "source-map",
+        devtool: 'source-map',
 
         module: {
             rules: [
@@ -18,31 +18,31 @@ module.exports = (env) => {
                 },
                 {
                     test: /\.css$/,
-                    loader: ExtractTextPlugin.extract({
-                        use: [{
-                            loader: 'css-loader',
-                            options: {
-                                context: "src",
-                                modules: true,
-                                localIdentName: '[local]_[hash:base64:5]',
-                            }
-                        }]
+                    use: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: 'css-loader'
                     })
+                },
+                {
+                    test: /\.svg$/,
+                    use: 'file-loader',
+
                 }
             ]
         },
 
         resolve: {
-            extensions: [".tsx", ".ts", ".js"]
+            extensions: ['.tsx', '.ts', '.js']
         },
 
         output: {
             filename: 'bundle.js',
-            path: path.resolve('./out/static')
+            path: path.resolve('./out/static'),
+            publicPath: "static/"
         },
 
         plugins: [
-            new ExtractTextPlugin('[name].css')
+            new ExtractTextPlugin('styles.css')
         ]
     }
 

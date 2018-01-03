@@ -7,15 +7,15 @@
     "clean": "rimraf out coverage",
     "lint": "tslint src/**/*.ts",
     "build:server": "tsc -p .",
-    "build:server:copy": "cpx \"src/**/*.{hbs,css}\" out",
+    "build:server:copy": "cpx \"src/**/*.{hbs,css,svg}\" out",
     "build:client": "webpack",
     "build": "run-p build:server build:server:copy build:client",
-    "pretest": "yarn run build",
-    "test": "yarn run lint && jest --coverage",
+    "pretest": "yarn build",
+    "test": "yarn lint && jest --coverage",
     "start": "node out/server/index.js",
-    "watch:build:server": "yarn run build:server --watch",
-    "watch:build:server:copy": "yarn run build:server:copy --watch",
-    "watch:build:client": "yarn run build:client --watch",
+    "watch:build:server": "yarn build:server --watch",
+    "watch:build:server:copy": "yarn build:server:copy --watch",
+    "watch:build:client": "yarn build:client --watch",
     "watch:start": "nodemon --delay 2 --watch out out/server/index.js",
     "prewatch": "mkdirp out",
     "watch": "run-p watch:**",
@@ -33,15 +33,14 @@
   },
   "homepage": "https://github.com/alpinebreeze/node-ts-express-react-starter-kit#readme",
   "devDependencies": {
-    "@types/css-modules-require-hook": "4.0.1",
     "@types/enzyme": "3.1.6",
     "@types/enzyme-adapter-react-16": "1.0.1",
     "@types/express": "4.11.0",
     "@types/helmet": "0.0.37",
     "@types/jest": "22.0.0",
     "@types/minimist": "1.2.0",
-    "@types/node": "8.5.2",
-    "@types/react": "16.0.31",
+    "@types/node": "8.5.4",
+    "@types/react": "16.0.33",
     "@types/react-dom": "16.0.3",
     "@types/react-redux": "5.0.14",
     "cpx": "1.5.0",
@@ -49,14 +48,14 @@
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "extract-text-webpack-plugin": "3.0.2",
-    "identity-obj-proxy": "3.0.0",
+    "file-loader": "1.1.6",
     "jest": "22.0.4",
     "mkdirp": "0.5.1",
     "nodemon": "1.14.7",
     "npm-run-all": "4.1.2",
-    "postcss": "6.0.15",
     "react-test-renderer": "16.2.0",
     "rimraf": "2.6.2",
+    "style-loader": "0.19.1",
     "ts-loader": "3.2.0",
     "tslint": "5.8.0",
     "typescript": "2.6.2",
@@ -64,7 +63,7 @@
     "webpack-bundle-analyzer": "2.9.1"
   },
   "dependencies": {
-    "css-modules-require-hook": "4.2.2",
+    "asset-require-hook": "1.2.0",
     "express": "4.16.2",
     "hbs": "4.0.1",
     "helmet": "3.9.0",
@@ -77,11 +76,9 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css|less)$": "identity-obj-proxy"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/out/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/out/__mocks__/styleMock.js"
     },
-    "setupFiles": [
-      "<rootDir>/out/shim.js",
-      "<rootDir>/out/setupTests.js"
-    ]
+    "setupTestFrameworkScriptFile": "<rootDir>/out/setupTests.js"
   }
 }

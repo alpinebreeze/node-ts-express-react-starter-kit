@@ -1,8 +1,8 @@
-import * as cssHook from "css-modules-require-hook";
+import * as assetHook from "asset-require-hook";
 
-cssHook({
-    generateScopedName: "[local]_[hash:base64:5]",
-    rootDir: "out",
+assetHook({
+    extensions: ["css", "svg"],
+    publicPath: "static/",
 });
 
 import server from "./server";

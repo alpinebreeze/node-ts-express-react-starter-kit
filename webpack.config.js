@@ -38,7 +38,7 @@ module.exports = (env) => {
 
         output: {
             filename: 'bundle.js',
-            path: path.resolve('./out/public')
+            path: path.resolve('./out/static')
         },
 
         plugins: [

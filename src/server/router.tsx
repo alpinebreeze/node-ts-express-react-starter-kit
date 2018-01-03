@@ -23,7 +23,7 @@ export const getRootRequestHandler: express.RequestHandler = (req, res) => {
 export default () => {
 
     const router = express.Router();
-    router.use("/static", express.static(path.resolve(__dirname, "../public")));
+    router.use("/static", express.static(path.resolve(__dirname, "../static")));
     router.get("/", getRootRequestHandler);
     return router;
 };

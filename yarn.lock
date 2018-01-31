@@ -61,9 +61,9 @@
   dependencies:
     "@types/express" "*"
 
-"@types/jest@22.1.0":
-  version "22.1.0"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.1.0.tgz#c1de03bbac66fac4cc741f7a69cb73bc01a1707c"
+"@types/jest@22.1.1":
+  version "22.1.1"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.1.1.tgz#231d7c60ed130200af9e96c82469ed25b59a7ea2"
 
 "@types/mime@*":
   version "2.0.0"
@@ -145,7 +145,7 @@ acorn@^5.0.0, acorn@^5.1.1, acorn@^5.1.2:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.3.0.tgz#7446d39459c54fb49a80e6ee6478149b940ec822"
 
-ajv-keywords@^2.0.0:
+ajv-keywords@^2.0.0, ajv-keywords@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.1.tgz#617997fc5f60576894c435f940d819e135b80762"
 
@@ -4957,6 +4957,13 @@ schema-utils@^0.3.0:
   dependencies:
     ajv "^5.0.0"
 
+schema-utils@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.4.3.tgz#e2a594d3395834d5e15da22b48be13517859458e"
+  dependencies:
+    ajv "^5.0.0"
+    ajv-keywords "^2.1.0"
+
 semver-diff@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/semver-diff/-/semver-diff-2.1.0.tgz#4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36"
@@ -5329,12 +5336,12 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@0.19.1:
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.19.1.tgz#591ffc80bcefe268b77c5d9ebc0505d772619f85"
+style-loader@0.20.1:
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.20.1.tgz#33ac2bf4d5c65a8906bc586ad253334c246998d0"
   dependencies:
-    loader-utils "^1.0.2"
-    schema-utils "^0.3.0"
+    loader-utils "^1.1.0"
+    schema-utils "^0.4.3"
 
 subarg@^1.0.0:
   version "1.0.0"
@@ -5498,9 +5505,9 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-loader@3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-3.3.1.tgz#5d24b425876cfed094f8da95375c9fd1e598faec"
+ts-loader@3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-3.4.0.tgz#c376bc0538d4c441ea8790c3fd841ebfdbfb99d0"
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^3.0.0"

@@ -8,7 +8,7 @@ interface StateProps {
     name?: string;
 }
 
-export const Hello = (props: StateProps) =>
+export const Hello = (props: StateProps) => (
     <div className="App">
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
@@ -17,7 +17,8 @@ export const Hello = (props: StateProps) =>
         <p className="App-intro">
             Hello, {props.name || "World"}! Congratulations on setting up your universal web app.
         </p>
-    </div>;
+    </div>
+);
 
 export function mapStateToProps(state: State) {
     return { name: state.hello.name };

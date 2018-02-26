@@ -2,7 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { State } from "../state";
 import * as logo from "./logo.svg";
-import "./styles.css";
+import "./style.css";
 
 interface StateProps {
     name?: string;

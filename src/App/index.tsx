@@ -3,14 +3,16 @@ import { Provider } from "react-redux";
 import { Store } from "redux";
 import Hello from "./Hello";
 import { State } from "./state";
+import "./style.css";
 
 interface Props {
     store: Store<State>;
 }
 
-const App = (props: Props) =>
+const App = (props: Props) => (
     <Provider store={props.store}>
         <Hello />
-    </Provider>;
+    </Provider>
+);
 
 export default App;
